@@ -5,7 +5,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import murach.business.User;
-import murach.data.UserDB;
 
 public class EmailListServlet extends HttpServlet {
 
