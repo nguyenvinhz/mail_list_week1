@@ -12,7 +12,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # ===== Stage 2: Runtime =====
-FROM tomcat:10.1-jdk17-temurin
+FROM tomcat:9.0-jdk17-temurin
 
 # Xoa ung dung mac dinh cua Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*

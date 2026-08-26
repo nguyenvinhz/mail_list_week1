@@ -1,8 +1,8 @@
 package murach.email;
 
 import java.io.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 import murach.business.User;
 import murach.data.UserDB;
