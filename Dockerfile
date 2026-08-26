@@ -17,6 +17,9 @@ FROM tomcat:10.1-jdk17-temurin
 # Xoa ung dung mac dinh cua Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 
+# Disable Tomcat shutdown port de tranh WARNING "Invalid shutdown command" tren Render
+RUN sed -i 's/port="8005"/port="-1"/' /usr/local/tomcat/conf/server.xml
+
 # Copy file WAR da build vao thu muc webapps voi ten ROOT.war
 # de app chay o duong dan goc "/"
 COPY --from=build /app/target/mail_list_week1.war /usr/local/tomcat/webapps/ROOT.war
