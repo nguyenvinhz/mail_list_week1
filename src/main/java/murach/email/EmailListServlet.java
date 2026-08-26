@@ -1,17 +1,17 @@
-package email;
+package murach.email;
 
 import java.io.*;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 
-import business.User;
-import data.UserDB;
+import murach.business.User;
+import murach.data.UserDB;
 
 public class EmailListServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request,
-            HttpServletResponse response)
+                          HttpServletResponse response)
             throws ServletException, IOException {
 
         String url = "/index.html";
@@ -33,7 +33,7 @@ public class EmailListServlet extends HttpServlet {
 
             // store data in User object and save User object in database
             User user = new User(firstName, lastName, email);
-            UserDB.insert(user);
+            //UserDB.insert(user);
 
             // set User object in request object and set URL
             request.setAttribute("user", user);
@@ -44,5 +44,12 @@ public class EmailListServlet extends HttpServlet {
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request, response);
     }
 }

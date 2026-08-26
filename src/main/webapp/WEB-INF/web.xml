@@ -6,7 +6,7 @@
 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>EmailListServlet</servlet-name>
-        <servlet-class>email.EmailListServlet</servlet-class>
+        <servlet-class>murach.email.EmailListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EmailListServlet</servlet-name>
